@@ -10,12 +10,12 @@ import java.util.Optional;
 import static org.springframework.http.MediaType.APPLICATION_JSON_UTF8_VALUE;
 
 @RestController
-public class Controller {
+public class FilmController {
 
     private final FilmRepository filmRepository;
 
     @Autowired
-    public Controller(FilmRepository filmRepository) {
+    public FilmController(FilmRepository filmRepository) {
         this.filmRepository = filmRepository;
     }
 
@@ -30,7 +30,7 @@ public class Controller {
     }
 
     @GetMapping(value = "/{title}", produces = APPLICATION_JSON_UTF8_VALUE)
-    public List<Film> findByTitle(@PathVariable String title) {
+    public Film findByTitle(@PathVariable String title) {
         return filmRepository.findByTitle(title);
     }
 

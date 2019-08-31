@@ -13,8 +13,15 @@ public class Film {
 
     private String title;
     private String director;
-    private String releaseYear;
+    private int releaseYear;
     private boolean watched;
+
+    public Film(String title, String director, int releaseYear, boolean watched) {
+        this.title = title;
+        this.director = director;
+        this.releaseYear = releaseYear;
+        this.watched = watched;
+    }
 
     public String getTitle() {
         return title;
@@ -32,11 +39,11 @@ public class Film {
         this.director = director;
     }
 
-    public String getReleaseYear() {
+    public int getReleaseYear() {
         return releaseYear;
     }
 
-    public void setReleaseYear(String releaseYear) {
+    public void setReleaseYear(int releaseYear) {
         this.releaseYear = releaseYear;
     }
 
@@ -63,7 +70,7 @@ public class Film {
         Film film = (Film) o;
         return title.equals(film.title) &&
                 director.equals(film.director) &&
-                releaseYear.equals(film.releaseYear);
+                releaseYear == film.releaseYear;
     }
 
     @Override
