@@ -16,6 +16,8 @@ public class Film {
     private int releaseYear;
     private boolean watched;
 
+    public Film() {}
+
     public Film(String title, String director, int releaseYear, boolean watched) {
         this.title = title;
         this.director = director;

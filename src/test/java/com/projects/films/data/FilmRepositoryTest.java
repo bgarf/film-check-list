@@ -18,19 +18,21 @@ public class FilmRepositoryTest {
     private FilmRepository filmRepository;
 
     private String title = "2001 Space Odyssey";
-    private Film film = new Film(title, "Stanley Kubrick", 1967, true);
+    private Film spaceOdyssey = new Film(title, "Stanley Kubrick", 1968, true);
+    private Film goodfellas = new Film("Goodfellas", "Martin Scorsese", 1990, true);
 
 
     @Before
     public void mongoSetup() {
-        filmRepository.save(film);
+        filmRepository.save(spaceOdyssey);
+        filmRepository.save(goodfellas);
     }
 
 
     @Test
-    public void findByTitle() {
+    public void findByTitleShouldReturnFilmWithSameTitle() {
         Film result = filmRepository.findByTitle(title);
 
-        assertEquals(result, film);
+        assertEquals(result, spaceOdyssey);
     }
 }
