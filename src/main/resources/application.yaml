@@ -1,4 +1,30 @@
+server:
+  port: 8080
+
 spring:
   data:
     mongodb:
       database: films
+      port: 27017
+      host: mongo
+
+---
+
+spring:
+  data:
+    mongodb:
+      database: films
+      port: 0
+      host: localhost
+  profiles: test
+
+
+---
+
+spring:
+  data:
+    mongodb:
+      database: films
+      port: 27017
+      host: localhost
+  profiles: local

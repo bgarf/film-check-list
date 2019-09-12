@@ -24,3 +24,8 @@ dependencies {
     testCompile 'org.springframework.boot:spring-boot-starter-test'
     testCompile 'de.flapdoodle.embed:de.flapdoodle.embed.mongo'
 }
+
+tasks.bootRun {
+    bootRun.systemProperty 'spring.profiles.active', 'local'
+}
+
