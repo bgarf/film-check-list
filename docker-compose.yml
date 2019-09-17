@@ -1,0 +1,17 @@
+version: '3.7'
+services:
+  app:
+    image: "film-checklist"
+    build:
+      context: .
+    depends_on:
+      - mongo
+    ports:
+      - "8081:8081"
+  mongo:
+    image: mongo
+    restart: always
+    ports:
+      - "27017:27017"
+    volumes:
+      - ./mongo/data-dir:/data/db

@@ -8,7 +8,7 @@ plugins {
 apply plugin: 'io.spring.dependency-management'
 
 group 'com.projects'
-version '1.0-SNAPSHOT'
+version '1.0'
 
 sourceCompatibility = 1.8
 
@@ -27,5 +27,9 @@ dependencies {
 
 tasks.bootRun {
     bootRun.systemProperty 'spring.profiles.active', 'local'
+}
+
+tasks.test {
+    test.systemProperty 'spring.profiles.active', 'test'
 }
 
