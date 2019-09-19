@@ -11,7 +11,7 @@ COPY . .
 
 RUN ./gradlew clean build
 
-FROM openjdk:8 as publish
+FROM openjdk:8-jdk-alpine
 
 COPY --from=build ./build/libs/film-check-list-1.0.jar ./app.jar
 
